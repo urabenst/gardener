@@ -24,10 +24,10 @@ import (
 	unsafe "unsafe"
 
 	componentconfig "github.com/gardener/gardener/pkg/apis/componentconfig"
-	glog "github.com/golang/glog"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	conversion "k8s.io/apimachinery/pkg/conversion"
 	runtime "k8s.io/apimachinery/pkg/runtime"
+	klog "k8s.io/klog"
 )
 
 func init() {
@@ -346,7 +346,7 @@ func autoConvert_v1alpha1_ControllerManagerConfiguration_To_componentconfig_Cont
 		return err
 	}
 	out.LogLevel = in.LogLevel
-	out.KubernetesLogLevel = glog.Level(in.KubernetesLogLevel)
+	out.KubernetesLogLevel = klog.Level(in.KubernetesLogLevel)
 	if err := Convert_v1alpha1_ServerConfiguration_To_componentconfig_ServerConfiguration(&in.Server, &out.Server, s); err != nil {
 		return err
 	}
@@ -371,7 +371,7 @@ func autoConvert_componentconfig_ControllerManagerConfiguration_To_v1alpha1_Cont
 		return err
 	}
 	out.LogLevel = in.LogLevel
-	out.KubernetesLogLevel = glog.Level(in.KubernetesLogLevel)
+	out.KubernetesLogLevel = klog.Level(in.KubernetesLogLevel)
 	if err := Convert_componentconfig_ServerConfiguration_To_v1alpha1_ServerConfiguration(&in.Server, &out.Server, s); err != nil {
 		return err
 	}
