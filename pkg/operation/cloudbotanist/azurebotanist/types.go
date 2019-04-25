@@ -24,11 +24,11 @@ type AzureBotanist struct {
 
 const (
 	// SubscriptionID is a constant for the key in a cloud provider secret that holds the Azure subscription id.
-	SubscriptionID = "subscriptionID"
+	SubscriptionID = "AZURE_SUBSCRIPTION_ID"
 	// TenantID is a constant for the key in a cloud provider secret that holds the Azure tenant id.
-	TenantID = "tenantID"
+	TenantID = "AZURE_TENANT_ID"
 	// ClientID is a constant for the key in a cloud provider secret that holds the Azure client id.
-	ClientID = "clientID"
+	ClientID = "AZURE_CLIENT_ID"
 	// ClientSecret is a constant for the key in a cloud provider secret that holds the Azure client secret.
-	ClientSecret = "clientSecret"
+	ClientSecret = "AZURE_CLIENT_SECRET"
 )
